@@ -1,0 +1,52 @@
+@import "../../config/variables";
+@import "../../config/mixins";
+
+.book-details {
+  width: 50%;
+  margin: 30px auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #1f479b;
+  padding: 5px 0 10px 0;
+  position: relative;
+}
+
+.details-wrapper {
+  width: 75%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25em;
+  color: #1f479b;
+}
+
+.book-content {
+  padding: 10px 0 10px 0;
+  width: 100%;
+}
+
+.book-id {
+  padding: 4px;
+  display: inline-block;
+  font-size: 0.90em;
+  font-weight: bold;
+  border-radius: 1rem;
+  background-color: #def2fd;
+}
+
+@media only screen and (max-width: $phone-width) {
+  .book-details {
+    //margin: 10px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 1.75em;
+  }
+
+  .book-id {
+    font-size: 0.75em;
+  }
+}

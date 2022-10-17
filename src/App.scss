@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import "config/variables";
+@import "config/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Oxygen';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: $sec-color;
+  color: $acc-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  a {
+    transition: color 0.50s ease;
+  }
+
+}
+
+.container {
+  background-color: $back-color;
+  width: $phone-width;
+  @include for-tablet-and-up {
+    width: $tablet-width;
+  }
+  @include for-desktop-and-up {
+    width: $desktop-width;
+  }
+  position: relative;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  width: 100%;
+  order: 0;
+  flex: 0 1 auto;
+  //align-self: auto;
+}
+
+
+.footer {
+  padding: 3px;
+  font-size: smaller;
+  color: $back-color;
+  text-align: center;
+  background: $dom-color;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
