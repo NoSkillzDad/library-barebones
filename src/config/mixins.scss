@@ -1,0 +1,21 @@
+@import "variables";
+
+@mixin for-tablet-and-up {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin for-desktop-and-up {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+.container {
+  font-size: 12px;
+
+  @include for-tablet-and-up {
+    font-size: 14px;
+  }
+}
