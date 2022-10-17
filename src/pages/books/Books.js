@@ -11,6 +11,7 @@ const Books = () => {
     const navigate = useNavigate();
 
     const [books, setBooks] = useState([]);
+    const [book, setBook] = useState([]);
 
     const [redirected, isRedirected] = useState(false);
 
@@ -18,7 +19,7 @@ const Books = () => {
     const getBook = async (id) => {
         try {
             const bookDetails = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
-            setBooks(bookDetails.data);
+            setBook(bookDetails.data);
         } catch (e) {
             navigate(`/booknotfound/${e.response.status}`);
         }
@@ -47,12 +48,12 @@ const Books = () => {
     }
 
     useEffect(() => {
-        if (typeof id === 'undefined') {
+        if ( typeof id === 'undefined' ) {
             getAllBooks();
         } else {
             if (id > 0) getBook(id);
         }
-    }, [redirected]);
+    }, [books]);
 
     return (
         <>
@@ -60,9 +61,9 @@ const Books = () => {
                 <>
                     <div className={"all-container"}>
                         <Book
-                            id={books.id}
-                            title={books.title}
-                            body={books.body}/>
+                            id={book.id}
+                            title={book.title}
+                            body={book.body}/>
                     </div>
                 </>
             }

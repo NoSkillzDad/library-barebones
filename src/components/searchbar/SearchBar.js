@@ -13,12 +13,17 @@ const SearchBar = () => {
     }
 
     const handleSubmit = (e) => {
-      navigate(`/books/${bookId}`);
+        if (bookId < 1 || bookId > 100) {
+            alert("Enter a valid Book id (1-100)");
+            return;
+        }
+        navigate(`/books/${bookId}`);
     }
 
     return (<>
             <form className={"search-container"} onSubmit={handleSubmit}>
-                <input id={"search-bar"} type={"text"} placeholder={"Enter book id..."} value={bookId} onChange={handleChange}/>
+                <input id={"search-bar"} type={"number"} placeholder={"Enter book id..."} value={bookId}
+                       onChange={handleChange}/>
                 <button type="submit">Find Book</button>
             </form>
 
