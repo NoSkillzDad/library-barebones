@@ -38,7 +38,8 @@ body {
 
 .container {
   background-color: $back-color;
-  width: $phone-width;
+  width: 100vw;
+  //width: $phone-width;
   @include for-tablet-and-up {
     width: $tablet-width;
   }
