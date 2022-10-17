@@ -47,15 +47,15 @@ body {
   }
   position: relative;
   min-height: 100vh;
+
 }
 
 .content {
   display: flex;
-  min-height: 500px;
-  flex-direction: column;
+  height: 75vh;
+  margin: auto;
   justify-content: center;
   align-items: center;
-  //align-items: center;
 }
 
 .header {
@@ -65,9 +65,7 @@ body {
   width: 100%;
   order: 0;
   flex: 0 1 auto;
-  //align-self: auto;
 }
-
 
 .footer {
   padding: 3px;
