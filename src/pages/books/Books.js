@@ -13,7 +13,7 @@ const Books = () => {
     const [books, setBooks] = useState([]);
     const [book, setBook] = useState([]);
 
-    const [redirected, isRedirected] = useState(false);
+    // const [redirected, isRedirected] = useState(false);
 
 
     const getBook = async (id) => {
@@ -33,27 +33,31 @@ const Books = () => {
         }
     }
 
-    const handleClick = () => {
-        isRedirected(true);
+    // const handleClick = () => {
+    //     isRedirected(true);
+    // }
+
+    const renderTitle = (title) => {
+        return (title.length > 18) ? title.substring(0, 15) + "..." : title;
     }
 
     const rederAllBooks = () => {
-        return books.map((book) => (
-            <Link to={`/books/${book.id}`}>
-                <div key={book.id} onClick={handleClick}>
-                    {book.id}. {book.title}
-                </div>
-            </Link>
+        return books.map((book, index) => (
+            // <div className={"book-item"}>
+                <Link to={`/books/${book.id}`} id={index}>
+                    {book.id}. {renderTitle(book.title)}
+                </Link>
+            // </div>
         ));
     }
 
     useEffect(() => {
-        if ( typeof id === 'undefined' ) {
+        if (typeof id === 'undefined') {
             getAllBooks();
         } else {
             if (id > 0) getBook(id);
         }
-    }, [books]);
+    }, [books, book]);
 
     return (
         <>
@@ -68,11 +72,11 @@ const Books = () => {
                 </>
             }
             {!id &&
-                <>
+                <div className={"all-books-container"}>
                     <div className={"list-container"}>
                         {rederAllBooks()}
                     </div>
-                </>
+                </div>
             }
 
 

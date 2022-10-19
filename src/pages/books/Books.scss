@@ -1,6 +1,23 @@
+@import "../../config/variables";
+
+.all-books-container {
+  width: inherit;
+  height: 100%;
+}
+
 .list-container {
-  margin: 20px 0 50px 0;
-  width: 75%;
-  display: flex;
-  flex-direction: column;
+  padding: 2vh 5vw 5vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  background-color: $back-color;
+}
+
+.list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.list-container > * {
+  font-size: 0.75rem;
 }

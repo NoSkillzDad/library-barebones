@@ -11,5 +11,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//TODO check that input is valid on searchbar

@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $sec-color;
   color: $acc-color;
   display: flex;
@@ -31,14 +31,21 @@ body {
   align-items: center;
 
   a {
+    text-decoration: none;
+    color: $dom-color;
     transition: color 0.50s ease;
+  }
+
+  a:hover {
+    color: $acc-color;
+    font-weight: bold;
   }
 
 }
 
 .container {
   background-color: $back-color;
-  width: $phone-width;
+  width: 100%; //phone width
   @include for-tablet-and-up {
     width: $tablet-width;
   }
@@ -47,27 +54,38 @@ body {
   }
   position: relative;
   min-height: 100vh;
+
 }
 
+
+
 .content {
-  display: flex;
-  min-height: 500px;
-  flex-direction: column;
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  display: block;
+  overflow: auto;
+  @include for-tablet-and-up {
+    width: $tablet-width;
+  }
+  @include for-desktop-and-up {
+    width: $desktop-width;
+  }
+  margin: auto;
   justify-content: center;
   align-items: center;
-  //align-items: center;
+  z-index: 1;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
   margin-top: 0;
-  width: 100%;
+  width: inherit;
   order: 0;
   flex: 0 1 auto;
-  //align-self: auto;
+  top: 0;
+  z-index: 10;
 }
-
 
 .footer {
   padding: 3px;
@@ -75,9 +93,10 @@ body {
   color: $back-color;
   text-align: center;
   background: $dom-color;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: inherit;
+  z-index: 10;
 }
 
 
