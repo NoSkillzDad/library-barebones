@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import NavBar from "./components/navbar/NavBar";
 import NotFound from "./pages/notfound/NotFound";
 import Books from "./pages/books/Books";
+// import ReadPDF from "./pages/readpdf/ReadPDF";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path={"/"} element={<Home />} />
                     <Route path={"/books"} element={<Books />} />
                     <Route path={"/books/:id"} element={<Books />} />
+                    {/*<Route path={"/books/fullbook/:filename"} element={<ReadPDF />} />*/}
                     <Route path={"/booknotfound"} element={<NotFound />} />
                     <Route path={"*"} element={<NotFound />} />
                 </Routes>
