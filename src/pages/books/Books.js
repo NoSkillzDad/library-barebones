@@ -15,18 +15,37 @@ const Books = () => {
 
     // const [redirected, isRedirected] = useState(false);
 
-
+// Commented out to use my fake API instead
+//     const getBook = async (id) => {
+//         try {
+//             const bookDetails = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//             setBook(bookDetails.data);
+//         } catch (e) {
+//             navigate(`/booknotfound/${e.response.status}`);
+//         }
+//     }
+//     const getAllBooks = async () => {
+//         try {
+//             const bookDetails = await axios.get('https://jsonplaceholder.typicode.com/posts/');
+//             setBooks(bookDetails.data);
+//         } catch (e) {
+//             navigate(`/booknotfound/${e.response.status}`);
+//         }
+//     }
+    
+    
     const getBook = async (id) => {
         try {
-            const bookDetails = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+            const bookDetails = await axios.get(`http://localhost:3000/books/${id}`);
             setBook(bookDetails.data);
         } catch (e) {
             navigate(`/booknotfound/${e.response.status}`);
         }
     }
+    
     const getAllBooks = async () => {
         try {
-            const bookDetails = await axios.get('https://jsonplaceholder.typicode.com/posts/');
+            const bookDetails = await axios.get('http://localhost:3000/books');
             setBooks(bookDetails.data);
         } catch (e) {
             navigate(`/booknotfound/${e.response.status}`);
@@ -41,7 +60,7 @@ const Books = () => {
         return (title.length > 18) ? title.substring(0, 15) + "..." : title;
     }
 
-    const rederAllBooks = () => {
+    const renderAllBooks = () => {
         return books.map((book, index) => (
             // <div className={"book-item"}>
                 <Link to={`/books/${book.id}`} id={index}>
@@ -67,14 +86,17 @@ const Books = () => {
                         <Book
                             id={book.id}
                             title={book.title}
-                            body={book.body}/>
+                            excerpt={book.excerpt}
+                            authors={book.authors}
+                            filename={book.filename}/>
+                            {/*body={book.body}/>*/}
                     </div>
                 </>
             }
             {!id &&
                 <div className={"all-books-container"}>
                     <div className={"list-container"}>
-                        {rederAllBooks()}
+                        {renderAllBooks()}
                     </div>
                 </div>
             }
