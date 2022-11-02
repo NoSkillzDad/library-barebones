@@ -1,0 +1,82 @@
+@import "src/config/variables";
+@import "src/config/mixins";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+
+.nav-wrapper {
+  background: $dom-color;
+  color: $back-color;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__navbar {
+  font-weight: bold;
+  margin-right: 5px;
+
+  a {
+    color: $sec-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $back-color;
+    }
+  }
+
+  .span-link {
+    cursor: pointer;
+    color: $sec-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $back-color;
+    }
+  }
+
+  .navbar_icon {
+    display: block;
+    @include for-tablet-and-up {
+      display: none;
+    }
+    @include for-desktop-and-up{
+      display: none;
+    }
+  }
+
+  .navbar_text {
+    display: none;
+    @include for-tablet-and-up {
+      display: block;
+    }
+    @include for-desktop-and-up{
+      display: block;
+    }
+  }
+
+  * {
+    padding: 0 5px 0 5px;
+  }
+}
+
+.nav__navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  //flex-basis: 350px;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+.nav__logo-wrapper {
+  width: 55px;
+  padding: 10px 5px 10px 15px;
+
+  img:hover {
+    cursor: pointer;
+  }
+}
+
+

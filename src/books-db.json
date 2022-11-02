@@ -1,0 +1,26 @@
+{
+  "books": [
+    {
+      "filename": "Reprehendunt-0.pdf",
+      "title": "Reprehendunt",
+      "excerpt": "ocurreret altera habeo singulis altera efficitur utinam antiopam cum oporteat sed semper an movet dolor dicit meliore in ut eget magna mucius rhoncus luctus potenti dictas sollicitudin diam feugiat esse iisque mi deterruisset nunc laoreet luptatum falli tristique suavitate massa ne nominavi movet primis malorum tractatos vim dico ancillae morbi mauris ne purus habitant veritus",
+      "id": 0,
+      "authors": [
+        "Alphonso Sloan",
+        "Barton Hurley",
+        "Everett Lowe"
+      ]
+    },
+    {
+      "filename": "Eripuit_No-1.pdf",
+      "title": "Eripuit Nobis Iaculis",
+      "excerpt": "epicuri detraxit mollis indoctum debet populo postea viderer quot mel minim nullam condimentum eruditi diam molestiae urna honestatis quas error ancillae necessitatibus vulputate iusto eget vidisse faucibus eruditi errem adipisci inceptos pulvinar deserunt percipit sale scripta pretium patrioque sem tractatos senserit vivendo vero errem quaestio dicat delectus quidam iuvaret tincidunt posidonium maximus vitae tincidunt tation constituto nisi elit expetendis maiestatis integer postea ea solet alterum ocurreret rhoncus inceptos leo",
+      "id": 1,
+      "authors": [
+        "Lazaro Owens",
+        "Latasha Navarro",
+        "Ronald Schultz"
+      ]
+    }
+  ]
+}
