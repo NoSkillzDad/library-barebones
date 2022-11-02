@@ -19,7 +19,7 @@ const SearchBar = () => {
         const value = inputRef.current.value; //added 2nd time
 
 
-        if (value < 0 || value > 50) {
+        if (value < 1 || value > 50) {
             alert("Enter a valid Book id (0-50)");
             return;
         }
