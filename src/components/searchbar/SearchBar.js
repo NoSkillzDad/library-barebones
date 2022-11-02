@@ -19,8 +19,8 @@ const SearchBar = () => {
         const value = inputRef.current.value; //added 2nd time
 
 
-        if (value < 1 || value > 100) {
-            alert("Enter a valid Book id (1-100)");
+        if (value < 0 || value > 50) {
+            alert("Enter a valid Book id (0-50)");
             return;
         }
         navigate(`/books/${value}`);

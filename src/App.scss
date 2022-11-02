@@ -54,21 +54,20 @@ body {
   }
   position: relative;
   min-height: 100vh;
-
 }
-
-
 
 .content {
   position: relative;
-  top: 10vh;
+  top: 2vh;
   width: 100vw;
   display: block;
   overflow: auto;
   @include for-tablet-and-up {
+    top: 4vh;
     width: $tablet-width;
   }
   @include for-desktop-and-up {
+    top: 8vh;
     width: $desktop-width;
   }
   margin: auto;

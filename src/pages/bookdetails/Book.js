@@ -10,8 +10,8 @@ const Book = ({id, title, excerpt, authors, filename}) => {
 
                 <div className={"details-wrapper"}>
                     <div className={"title"}>
-                        {/*<Link to={`/books/fullbook/${filename}`}>*/}
-                        <Link to={`/library/${filename}`} target={"_blank"}>
+                        <Link to={`/books/fullbook/${filename}`}>
+                        {/*<Link to={`/library/${filename}`} target={"_blank"}>*/}
                             {title}
                         </Link>
                     </div>
